@@ -31,3 +31,8 @@ else if userSelection is rock and cpuSelection is paper
 | or userSelection is paper and cpuSelection is scissors
 | or else if userSelection is scissors and cpuSelection is rock
     -> return that the user won the round 
+
+
+function random(low = 0, high) {
+      return low + Math.round(Math.random() * (high - low));
+    }
