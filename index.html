@@ -97,14 +97,14 @@
 
         <script>
 
-            //create a variable of type const called userRock which has an initial value of the userRock button (getElementById)
-            const userRock = document.getElementById("chooseRock");
+            //create a variable of type const called chooseRock which has an initial value of the userRock button (getElementById)
+            const chooseRock = document.getElementById("chooseRock");
 
-            //create a variable of type const called userPaper which has an initial value of the choosePaper button (getElementById)
-            const userPaper = document.getElementById("choosePaper");
+            //create a variable of type const called choosePaper which has an initial value of the choosePaper button (getElementById)
+            const choosePaper = document.getElementById("choosePaper");
 
-            // create a variable of type const called userScissors which has an initial value of the chooseScissors button (getElementById)
-            const userScissors = document.getElementById("chooseScissors");
+            // create a variable of type const called chooseScissors which has an initial value of the chooseScissors button (getElementById)
+            const chooseScissors = document.getElementById("chooseScissors");
 
             // create a variable of type let called userWins with an initial value of zero. Used to store the number of rounds the user has won. 
             let userWins = 0;
@@ -138,18 +138,47 @@
             // type const called cpuScore3 which has an initial value of the cpuScore3 button (getElementById)
             const cpuScore3 = document.getElementById("cpuScore3");
 
-            //Add the event listener to userRock 
-            userRock.addEventListener("click", function () {
+            //Add the event listener to chooseRock 
+            chooseRock.addEventListener("click", function () {
 
                 //Assign the value of userDecision to 'rock'
-                userDecision = "rock";
+                userDecision = 'rock';
 
                 //Display the rock image in the user section. 
+                //document.getElementById("userRock").display = block;
 
                 //Call the getComputerChoice() function. Assign the output to cpuDecision.
                 cpuDecision = getComputerChoice();
 
+                //Call cpuDisplay function. Passing it the cpuDecision as the argument. 
+
+                // Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
+                playRound(userDecision, cpuDecision);
+
+
             });
+
+            //Add the event listener to choosePaper. On click do the following: 
+            //     Assign the value of userDecision to 'paper'
+
+            //     Display the paper image in the user section. 
+
+            //     Call the getComputerChoice() function. Assign the output to cpuDecision.
+
+            //     Call cpuDisplay function. Passing it the cpuDecision as the argument. 
+
+            //     Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
+
+            // Add the event listener to chooseScissors. On click do the following: 
+            //     Assign the value of userDecision to 'scissors'
+
+            //     Display the scissors image in the user section. 
+
+            //     Call the getComputerChoice() function. Assign the output to cpuDecision.
+
+            //     Call cpuDisplay function. Passing it the cpuDecision as the argument. 
+
+            //     Call the function playRound. Pass the userDecision and cpuDecision into the function as argument.
 
 
 
@@ -173,6 +202,37 @@
                 else if (cpuRand == 3) {
                     return 'scissors';
                 }
+            }
+
+            //Function that when called determines if the user or cpu won the round
+            function playRound(userSelection, cpuSelection){
+
+                //If there is a tie
+                if (userSelection == cpuSelection){
+                    console.log('tie');
+                    return;
+                }
+                
+                //If user wins
+                else if ((userSelection == 'rock' && cpuSelection == 'scissors')
+                ||(userSelection == 'paper' && cpuSelection == 'rock')
+                ||(userSelection == 'scissors' && cpuSelection == 'paper')){
+                    console.log('The user won');
+                    userWins += 1;
+                    return;
+
+                }
+
+                //If cpu wins
+                else if ((userSelection == 'rock' && cpuSelection == 'paper')
+                ||(userSelection == 'paper' && cpuSelection == 'scissors')
+                ||(userSelection == 'scissors' && cpuSelection == 'rock')){
+                    console.log('The cpu won');
+                    cpuWins += 1;
+                    return;
+
+                }
+
             }
 
             //Function that generates a random number between the low and high parameters

@@ -1,9 +1,9 @@
 
-create a variable of type const called userRock which has an initial value of the chooseRock button (getElementById)
+create a variable of type const called chooseRock which has an initial value of the chooseRock button (getElementById)
 
-create a variable of type const called userPaper which has an initial value of the choosePaper button (getElementById)
+create a variable of type const called choosePaper which has an initial value of the choosePaper button (getElementById)
 
-create a variable of type const called userScissors which has an initial value of the chooseScissors button (getElementById)
+create a variable of type const called chooseScissors which has an initial value of the chooseScissors button (getElementById)
 
 create a variable of type let called userWins with an initial value of zero. Used to store the number of rounds the user has won. 
 
@@ -23,7 +23,7 @@ type const called cpuScore2 which has an initial value of the cpuScore2 button (
 type const called cpuScore3 which has an initial value of the cpuScore3 button (getElementById)
 
 
-Add the event listener to userRock. On click do the following: 
+Add the event listener to chooseRock. On click do the following: 
     Assign the value of userDecision to 'rock'
 
     Display the rock image in the user section. 
@@ -34,7 +34,7 @@ Add the event listener to userRock. On click do the following:
 
     Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments.
 
-Add the event listener to userPaper. On click do the following: 
+Add the event listener to choosePaper. On click do the following: 
     Assign the value of userDecision to 'paper'
 
     Display the paper image in the user section. 
@@ -45,7 +45,7 @@ Add the event listener to userPaper. On click do the following:
 
     Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
 
-Add the event listener to userScissors. On click do the following: 
+Add the event listener to chooseScissors. On click do the following: 
     Assign the value of userDecision to 'scissors'
 
     Display the scissors image in the user section. 
