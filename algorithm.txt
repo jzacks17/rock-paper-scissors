@@ -105,10 +105,10 @@ function: cpuDisplay
     else 
         -> Display scissors image
 
-function: winner
+function: score
     Turns on/off the lights corresponding to the number of wins, displays a message if the cpu or user has won their 3rd game
 
-    Accepts two paramaters, userWins and cpuWins
+    Accepts two paramaters, userW and cpuW
 
 
     if userWins is equal to one

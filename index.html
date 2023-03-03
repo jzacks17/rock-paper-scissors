@@ -19,8 +19,6 @@
     <div class="game">
 
 
-
-
         <!-- User (left half of the page) -->
         <div class="user">
 
@@ -145,7 +143,7 @@
                 userDecision = 'rock';
 
                 //Display the rock image in the user section. 
-                //document.getElementById("userRock").display = block;
+                //document.getElementById("userRock").style.display = block;
 
                 //Call the getComputerChoice() function. Assign the output to cpuDecision.
                 cpuDecision = getComputerChoice();
@@ -155,30 +153,53 @@
                 // Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
                 playRound(userDecision, cpuDecision);
 
+                //Call the function score. Pass userWins and cpuWins into the function as arguments
+                score(userWins, cpuWins);
+
 
             });
 
             //Add the event listener to choosePaper. On click do the following: 
-            //     Assign the value of userDecision to 'paper'
+            choosePaper.addEventListener("click", function () {
 
-            //     Display the paper image in the user section. 
+                //Assign the value of userDecision to 'paper'
+                userDecision = 'paper';
 
-            //     Call the getComputerChoice() function. Assign the output to cpuDecision.
+                //Display the paper image in the user section. 
 
-            //     Call cpuDisplay function. Passing it the cpuDecision as the argument. 
+                //Call the getComputerChoice() function. Assign the output to cpuDecision.
+                cpuDecision = getComputerChoice();
 
-            //     Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
+                //Call cpuDisplay function. Passing it the cpuDecision as the argument. 
+
+                //Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
+                playRound(userDecision, cpuDecision);
+
+                //Call the function score. Pass userWins and cpuWins into the function as arguments
+                score(userWins, cpuWins);
+
+            });
 
             // Add the event listener to chooseScissors. On click do the following: 
-            //     Assign the value of userDecision to 'scissors'
+            chooseScissors.addEventListener("click", function () {
 
-            //     Display the scissors image in the user section. 
+                //Assign the value of userDecision to 'scissors'
+                userDecision = 'scissors';
 
-            //     Call the getComputerChoice() function. Assign the output to cpuDecision.
+                //Display the scissors image in the user section. 
 
-            //     Call cpuDisplay function. Passing it the cpuDecision as the argument. 
+                //Call the getComputerChoice() function. Assign the output to cpuDecision.
+                cpuDecision = getComputerChoice();
 
-            //     Call the function playRound. Pass the userDecision and cpuDecision into the function as argument.
+                //Call cpuDisplay function. Passing it the cpuDecision as the argument. 
+
+                //Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
+                playRound(userDecision, cpuDecision);
+
+                //Call the function score. Pass userWins and cpuWins into the function as arguments
+                score(userWins, cpuWins);
+
+            });
 
 
 
@@ -205,18 +226,18 @@
             }
 
             //Function that when called determines if the user or cpu won the round
-            function playRound(userSelection, cpuSelection){
+            function playRound(userSelection, cpuSelection) {
 
                 //If there is a tie
-                if (userSelection == cpuSelection){
+                if (userSelection == cpuSelection) {
                     console.log('tie');
                     return;
                 }
-                
+
                 //If user wins
                 else if ((userSelection == 'rock' && cpuSelection == 'scissors')
-                ||(userSelection == 'paper' && cpuSelection == 'rock')
-                ||(userSelection == 'scissors' && cpuSelection == 'paper')){
+                    || (userSelection == 'paper' && cpuSelection == 'rock')
+                    || (userSelection == 'scissors' && cpuSelection == 'paper')) {
                     console.log('The user won');
                     userWins += 1;
                     return;
@@ -225,12 +246,41 @@
 
                 //If cpu wins
                 else if ((userSelection == 'rock' && cpuSelection == 'paper')
-                ||(userSelection == 'paper' && cpuSelection == 'scissors')
-                ||(userSelection == 'scissors' && cpuSelection == 'rock')){
+                    || (userSelection == 'paper' && cpuSelection == 'scissors')
+                    || (userSelection == 'scissors' && cpuSelection == 'rock')) {
                     console.log('The cpu won');
                     cpuWins += 1;
                     return;
 
+                }
+
+            }
+            //Turns on/off the lights corresponding to the number of wins, displays a message if the cpu or user has won their 3rd game
+            function score(userW, cpuW) {
+                if (userW == 1){
+                    userScore1.style.backgroundColor = 'red';
+                }
+                
+                else if (userW == 2){
+                    userScore2.style.backgroundColor = 'red';
+                }
+
+                else if (userW == 3){
+                    userScore3.style.backgroundColor = 'red';
+                    console.log(`The user won the series ${userW} - ${cpuW}!`)
+                }
+
+                if (cpuW == 1){
+                    cpuScore1.style.backgroundColor = 'red';
+                }
+                
+                else if (cpuW == 2){
+                    cpuScore2.style.backgroundColor = 'red';
+                }
+
+                else if (cpuW== 3){
+                    cpuScore3.style.backgroundColor = 'red';
+                    console.log(`The cpu won the series ${cpuW} - ${userW}!`)
                 }
 
             }
