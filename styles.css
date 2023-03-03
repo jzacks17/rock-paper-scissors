@@ -1,0 +1,114 @@
+/* Change all box sizing to border box */
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    /* Add flex box to the entire body */
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+}
+
+/* Styling for the header */
+
+.header {
+    flex: auto;
+    background-color: #371f1f;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.game {
+    /* Add flex box to the game section */
+    display: flex;
+    flex-direction: row;
+
+
+    flex: auto;
+
+}
+
+.user {
+
+    /* Add flex box to the user section */
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    flex: auto;
+
+}
+
+.cpu {
+
+    /* Add flex box to the user section */
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    flex: auto;
+
+}
+
+.score {
+    /* Add flex box to the score     section */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+
+    margin: 32px 100px 32px 100px;
+
+}
+
+.score button {
+
+    margin: 0px 64px;
+    border-radius: 16px;
+    padding: 8px;
+    background-color: white;
+    font-style: bold;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* Display holder for the images - essentially take up the empty space the images otherwise would */
+.image p {
+    padding: 200px;
+    /* display: none; */
+}
+
+/* Hide all the display images */
+.hidden {
+    display: none;
+
+    height: 200px;
+}
+
+.selection img {
+
+    width: 64px;
+
+}
+
+.selection button {
+    margin: 0px 16px;
+}

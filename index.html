@@ -5,13 +5,99 @@
     <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="./styles.css">
+
 </head>
 
 <body>
+    <!-- Header/title -->
+    <div class="header">
+        <h1>Rock Paper Scissors</h1>
+    </div>
 
-    <script>
 
-    </script>
+    <!-- Game to be played in  -->
+    <div class="game">
+
+
+
+
+        <!-- User (left half of the page) -->
+        <div class="user">
+
+            <!-- 3 buttons that represent the user's score  -->
+            <div class="score">
+
+                <button id="userButton3"></button>
+                <button id="userButton2"></button>
+                <button id="userButton1"></button>
+
+            </div>
+
+            <!--Image that displays the user's selection  -->
+            <div class="image">
+
+                <p></p>
+
+                <img class = "hidden" id = "userRock" src="images/rock.png" alt="Rock">
+
+                <img class = "hidden" id = "userPaper" src="images/paper.png" alt="Paper">
+
+                <img class = "hidden" id = "userScissorcs" src="images/scissors.png" alt="Scissors">
+
+
+
+            </div>
+
+            <!--Buttons for the user to choose rock paper or scissors -->
+            <div class="selection">
+
+                <button id="chooseRock"><img src="images/rock.png" alt="Rock"></button>
+
+                <button id="choosePaper"><img src="images/paper.png" alt="Paper"></button>
+
+                <button id="chooseScissors"><img src="images/scissors.png" alt="Scissors"></button>
+
+            </div>
+
+
+        </div>
+
+        <!-- CPU (right half of the page) -->
+        <div class="cpu">
+
+            <!-- 3 buttons that represent the cpu's score  -->
+            <div class="score">
+                <button id="cpuButton1"></button>
+                <button id="cpuButton2"></button>
+                <button id="cpuButton3"></button>
+
+            </div>
+
+            <!--Image that displays the cpu's selection  -->
+            <div class="image">
+                
+                <p></p>
+
+                <img class = "hidden" id = "cpuRock" src="images/rock.png" alt="Rock">
+
+                <img class = "hidden" id = "cpuPaper" src="images/paper.png" alt="Paper">
+
+                <img class = "hidden" id = "cpuScissorcs" src="images/scissors.png" alt="Scissors">
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <script>
+
+        </script>
 
 </body>
 
