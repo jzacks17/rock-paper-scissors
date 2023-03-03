@@ -1,0 +1,14 @@
+
+
+
+
+function: getComputerChoice 
+When called randomly returns rock, paper or Scissors
+
+Create a variable of type let called cpuRand and assign it a random value between 1 to 3 using the previously written random function 
+
+If cpuRand is 1, assign the cpu decision as rock and return rock 
+
+If cpuRand is 2, assign the cpu decision as paper and return paper
+
+If cpuRand is 3, assign the cpu decision as paper 
