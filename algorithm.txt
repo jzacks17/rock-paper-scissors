@@ -9,28 +9,40 @@ create a variable of type let called userWins with an initial value of zero. Use
 
 create a variable of type let called cpuWins with an initial value of zero. Used to store the number of rounds the cpu has won. 
 
-create a variable of type let called userDecision. Do not assign an initial value. 
+create a variable of type let called userDecision. Do not assign an initial value. Used to store the user's decision.
 
-create a variable of type let called cpuDecision. Do not assign an initial value. 
+create a variable of type let called cpuDecision. Do not assign an initial value. Used to store the cpu's decision. 
 
 Add the event listener to userRock. On click do the following: 
     Assign the value of userDecision to 'rock'
 
+    Display the rock image in the user section. 
+
     Call the getComputerChoice() function. Assign the output to cpuDecision.
+
+    Call cpuDisplay function. Passing it the cpuDecision as the argument. 
 
     Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments.
 
 Add the event listener to userPaper. On click do the following: 
     Assign the value of userDecision to 'paper'
 
+    Display the paper image in the user section. 
+
     Call the getComputerChoice() function. Assign the output to cpuDecision.
+
+    Call cpuDisplay function. Passing it the cpuDecision as the argument. 
 
     Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
 
 Add the event listener to userScissors. On click do the following: 
     Assign the value of userDecision to 'scissors'
 
+    Display the scissors image in the user section. 
+
     Call the getComputerChoice() function. Assign the output to cpuDecision.
+
+    Call cpuDisplay function. Passing it the cpuDecision as the argument. 
 
     Call the function playRound. Pass the userDecision and cpuDecision into the function as argument.
 
@@ -38,37 +50,57 @@ Add the event listener to userScissors. On click do the following:
 
 
 function: getComputerChoice 
-When called randomly returns rock, paper or Scissors
+    When called randomly returns rock, paper or Scissors
 
-Create a variable of type let called cpuRand and assign it a random value between 1 to 3 using the previously written random function 
+    Create a variable of type let called cpuRand and assign it a random value between 1 to 3 using the previously written random function 
 
-If cpuRand is 1, assign the cpu decision as rock and return rock 
+    If cpuRand is 1, assign the cpu decision as rock and return rock 
 
-If cpuRand is 2, assign the cpu decision as paper and return paper
+    If cpuRand is 2, assign the cpu decision as paper and return paper
 
-If cpuRand is 3, assign the cpu decision as paper 
+    If cpuRand is 3, assign the cpu decision as paper 
 
 
 function: playRound
-When called, determine if the user or cpu won the round
+    When called, determine if the user or cpu won the round
 
-Accepts two parameters, userSelection and cpuSelection
+    Accepts two parameters, userSelection and cpuSelection
 
-If userSelection and cpuSelection are equal
-    ->then return that it was a tie
+    If userSelection and cpuSelection are equal
+        ->then return that it was a tie
 
-else if userSelection is rock and cpuSelection is scissors 
-| or userSelection is paper and cpuSelection is rock 
-| or userSelection is scissors and cpuSelection is paper: 
-   -> return that the user won the round 
-   -> Increment userWins by 1
-
-else if userSelection is rock and cpuSelection is paper
-| or userSelection is paper and cpuSelection is scissors
-| or else if userSelection is scissors and cpuSelection is rock
+    else if userSelection is rock and cpuSelection is scissors 
+    | or userSelection is paper and cpuSelection is rock 
+    | or userSelection is scissors and cpuSelection is paper: 
     -> return that the user won the round 
-    -> Increment cpuWins by 1
+    -> Increment userWins by 1
 
+    else if userSelection is rock and cpuSelection is paper
+    | or userSelection is paper and cpuSelection is scissors
+    | or else if userSelection is scissors and cpuSelection is rock
+        -> return that the user won the round 
+        -> Increment cpuWins by 1
+
+function: cpuDisplay
+    Displays the cpu image corresponding to the cpu's decision
+
+    Accepts a single parameter, cpuSelection. 
+
+    if cpuSelection is rock 
+        -> Display rock image
+
+    else if cpuSelection is paper
+        -> Display paper image
+    
+    else 
+        -> Display scissors image
+
+function: winner
+    Turns on/off the lights corresponding to the number of wins, displays a message if the cpu or user has won their 3rd game
+
+    Accepts two paramaters, userWins and cpuWins
+
+    
 
 function random(low = 0, high) {
       return low + Math.round(Math.random() * (high - low));
