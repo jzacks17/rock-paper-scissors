@@ -100,18 +100,50 @@
             //create a variable of type const called userRock which has an initial value of the userRock button (getElementById)
             const userRock = document.getElementById("chooseRock");
 
+            //create a variable of type const called userPaper which has an initial value of the choosePaper button (getElementById)
+            const userPaper = document.getElementById("choosePaper");
+
+            // create a variable of type const called userScissors which has an initial value of the chooseScissors button (getElementById)
+            const userScissors = document.getElementById("chooseScissors");
+
+            // create a variable of type let called userWins with an initial value of zero. Used to store the number of rounds the user has won. 
+            let userWins = 0;
+
+            // create a variable of type let called cpuWins with an initial value of zero. Used to store the number of rounds the cpu has won.
+            let cpuWins = 0;
+
+
             //create a variable of type let called userDecision. Do not assign an initial value. Used to store the user's decision.
             let userDecision;
 
             //create a variable of type let called cpuDecision. Do not assign an initial value. Used to store the cpu's decision. 
             let cpuDecision;
 
+            // Create variables for the score buttons: 
+            // type const called userScore1 which has an initial value of the userScore1 button (getElementById)
+            const userScore1 = document.getElementById("userScore1");
+
+            // type const called userScore2 which has an initial value of the userScore2 button (getElementById)
+            const userScore2 = document.getElementById("userScore2");
+
+            // type const called userScore3 which has an initial value of the userScore3 button (getElementById)
+            const userScore3 = document.getElementById("userScore3");
+
+            // type const called cpuScore1 which has an initial value of the cpuScore1 button (getElementById)
+            const cpuScore1 = document.getElementById("cpuScore1");
+
+            // type const called cpuScore2 which has an initial value of the cpuScore2 button (getElementById)
+            const cpuScore2 = document.getElementById("cpuScore2");
+
+            // type const called cpuScore3 which has an initial value of the cpuScore3 button (getElementById)
+            const cpuScore3 = document.getElementById("cpuScore3");
+
             //Add the event listener to userRock 
             userRock.addEventListener("click", function () {
 
                 //Assign the value of userDecision to 'rock'
                 userDecision = "rock";
-                
+
                 //Display the rock image in the user section. 
 
                 //Call the getComputerChoice() function. Assign the output to cpuDecision.
