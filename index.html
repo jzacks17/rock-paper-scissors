@@ -34,7 +34,7 @@
             <!--Image that displays the user's selection  -->
             <div class="image">
 
-                <p></p>
+                <p id="userP"></p>
 
                 <img class="hidden" id="userRock" src="images/rock.png" alt="Rock">
 
@@ -74,7 +74,7 @@
             <!--Image that displays the cpu's selection  -->
             <div class="image">
 
-                <p></p>
+                <p id="cpuP"></p>
 
                 <img class="hidden" id="cpuRock" src="images/rock.png" alt="Rock">
 
@@ -143,12 +143,14 @@
                 userDecision = 'rock';
 
                 //Display the rock image in the user section. 
-                //document.getElementById("userRock").style.display = block;
+                document.getElementById("userP").style.display = "none";
+                document.getElementById("userRock").style.display = "block";
+                document.getElementById("userScissors").style.display = "none";
 
                 //Call the getComputerChoice() function. Assign the output to cpuDecision.
                 cpuDecision = getComputerChoice();
 
-                //Call cpuDisplay function. Passing it the cpuDecision as the argument. 
+                //Call Display function. Passing it the userDecision and cpuDecision as the argument. 
 
                 // Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
                 playRound(userDecision, cpuDecision);
@@ -170,7 +172,7 @@
                 //Call the getComputerChoice() function. Assign the output to cpuDecision.
                 cpuDecision = getComputerChoice();
 
-                //Call cpuDisplay function. Passing it the cpuDecision as the argument. 
+                //Call Display function. Passing it the userDecision and cpuDecision as the argument. 
 
                 //Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
                 playRound(userDecision, cpuDecision);
@@ -186,12 +188,10 @@
                 //Assign the value of userDecision to 'scissors'
                 userDecision = 'scissors';
 
-                //Display the scissors image in the user section. 
-
                 //Call the getComputerChoice() function. Assign the output to cpuDecision.
                 cpuDecision = getComputerChoice();
 
-                //Call cpuDisplay function. Passing it the cpuDecision as the argument. 
+                //Call Display function. Passing it the userDecision and cpuDecision as the argument. 
 
                 //Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
                 playRound(userDecision, cpuDecision);
@@ -225,6 +225,60 @@
                 }
             }
 
+            //Function that displays the user and cpu image corresponding to their choices
+            function display(userSelection, cpuSelection) {
+
+                //if user selection is rock, make the rock image visible
+                if (userSelection == 'rock') {
+                    document.getElementById("userP").style.display = "none";
+                    document.getElementById("userRock").style.display = "block";
+                    document.getElementById("userPaper").style.display = "none";
+                    document.getElementById("userScissors").style.display = "none";
+                }
+
+                //if user selection is paper, make the paper image visible
+                else if (userSelection == 'paper') {
+                    document.getElementById("userP").style.display = "none";
+                    document.getElementById("userRock").style.display = "none";
+                    document.getElementById("userPaper").style.display = "block";
+                    document.getElementById("userScissors").style.display = "none";
+                }
+
+                //if user selection is scissors, make the scissors image visible
+                else if (userSelection == 'scissors') {
+                    document.getElementById("userP").style.display = "none";
+                    document.getElementById("userRock").style.display = "none";
+                    document.getElementById("userPaper").style.display = "none";
+                    document.getElementById("userScissors").style.display = "block";
+                }
+
+                //if cpu selection is rock, make the rock image visible
+                if (cpuSelection == 'rock') {
+                    document.getElementById("cpuP").style.display = "none";
+                    document.getElementById("cpuRock").style.display = "block";
+                    document.getElementById("cpuPaper").style.display = "none";
+                    document.getElementById("cpuScissors").style.display = "none";
+                }
+
+                //if cpu selection is paper, make the paper image visible
+                else if (cpuSelection == 'paper') {
+                    document.getElementById("cpuP").style.display = "none";
+                    document.getElementById("cpuRock").style.display = "none";
+                    document.getElementById("cpuPaper").style.display = "block";
+                    document.getElementById("cpuScissors").style.display = "none";
+                }
+
+                //if cpu selection is scissors, make the scissors image visible
+                else if (cpuSelection == 'scissors') {
+                    document.getElementById("cpuP").style.display = "none";
+                    document.getElementById("cpuRock").style.display = "none";
+                    document.getElementById("cpuPaper").style.display = "none";
+                    document.getElementById("cpuScissors").style.display = "block";
+                }
+
+
+            }
+
             //Function that when called determines if the user or cpu won the round
             function playRound(userSelection, cpuSelection) {
 
@@ -255,30 +309,32 @@
                 }
 
             }
+
+
             //Turns on/off the lights corresponding to the number of wins, displays a message if the cpu or user has won their 3rd game
             function score(userW, cpuW) {
-                if (userW == 1){
+                if (userW == 1) {
                     userScore1.style.backgroundColor = 'red';
                 }
-                
-                else if (userW == 2){
+
+                else if (userW == 2) {
                     userScore2.style.backgroundColor = 'red';
                 }
 
-                else if (userW == 3){
+                else if (userW == 3) {
                     userScore3.style.backgroundColor = 'red';
                     console.log(`The user won the series ${userW} - ${cpuW}!`)
                 }
 
-                if (cpuW == 1){
+                if (cpuW == 1) {
                     cpuScore1.style.backgroundColor = 'red';
                 }
-                
-                else if (cpuW == 2){
+
+                else if (cpuW == 2) {
                     cpuScore2.style.backgroundColor = 'red';
                 }
 
-                else if (cpuW== 3){
+                else if (cpuW == 3) {
                     cpuScore3.style.backgroundColor = 'red';
                     console.log(`The cpu won the series ${cpuW} - ${userW}!`)
                 }

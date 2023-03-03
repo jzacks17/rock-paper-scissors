@@ -34,27 +34,29 @@ Add the event listener to chooseRock. On click do the following:
 
     Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments.
 
+    Call the function score. Pass userWins and cpuWins into the function as arguments
+
 Add the event listener to choosePaper. On click do the following: 
     Assign the value of userDecision to 'paper'
 
-    Display the paper image in the user section. 
-
     Call the getComputerChoice() function. Assign the output to cpuDecision.
 
-    Call cpuDisplay function. Passing it the cpuDecision as the argument. 
+    Call Display function. Passing it the userDecision and cpuDecision as the argument. 
 
     Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
+
+    Call the function score. Pass userWins and cpuWins into the function as arguments
 
 Add the event listener to chooseScissors. On click do the following: 
     Assign the value of userDecision to 'scissors'
 
-    Display the scissors image in the user section. 
-
     Call the getComputerChoice() function. Assign the output to cpuDecision.
 
-    Call cpuDisplay function. Passing it the cpuDecision as the argument. 
+    Call Display function. Passing it the userDecision and cpuDecision as the argument. 
 
     Call the function playRound. Pass the userDecision and cpuDecision into the function as argument.
+
+    Call the function score. Pass userWins and cpuWins into the function as arguments
 
 
 
@@ -91,10 +93,19 @@ function: playRound
         -> return that the user won the round 
         -> Increment cpuWins by 1
 
-function: cpuDisplay
-    Displays the cpu image corresponding to the cpu's decision
+function: Display
+    Displays the user and cpu image corresponding to the user's and cpu's decision
 
-    Accepts a single parameter, cpuSelection. 
+    Accepts two parameters, userSelection and cpuSelection.
+
+    if userSelection is rock 
+        -> Display rock image
+
+    else if userSelection is paper
+        -> Display paper image
+    
+    else 
+        -> Display scissors image
 
     if cpuSelection is rock 
         -> Display rock image
