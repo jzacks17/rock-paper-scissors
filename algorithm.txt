@@ -12,3 +12,22 @@ If cpuRand is 1, assign the cpu decision as rock and return rock
 If cpuRand is 2, assign the cpu decision as paper and return paper
 
 If cpuRand is 3, assign the cpu decision as paper 
+
+
+function: playRound
+When called, determine if the user or cpu won the round
+
+Accepts two parameters, userSelection and cpuSelection
+
+If userSelection and cpuSelection are equal
+    ->then return that it was a tie
+
+else if userSelection is rock and cpuSelection is scissors 
+| or userSelection is paper and cpuSelection is rock 
+| or userSelection is scissors and cpuSelection is paper: 
+   -> return that the user won the round 
+
+else if userSelection is rock and cpuSelection is paper
+| or userSelection is paper and cpuSelection is scissors
+| or else if userSelection is scissors and cpuSelection is rock
+    -> return that the user won the round 
