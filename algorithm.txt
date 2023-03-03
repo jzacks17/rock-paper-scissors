@@ -13,6 +13,16 @@ create a variable of type let called userDecision. Do not assign an initial valu
 
 create a variable of type let called cpuDecision. Do not assign an initial value. Used to store the cpu's decision. 
 
+Create variables for the score buttons: 
+type const called userScore1 which has an initial value of the userScore1 button (getElementById)
+type const called userScore2 which has an initial value of the userScore2 button (getElementById)
+type const called userScore3 which has an initial value of the userScore3 button (getElementById)
+
+type const called cpuScore1 which has an initial value of the cpuScore1 button (getElementById)
+type const called cpuScore2 which has an initial value of the cpuScore2 button (getElementById)
+type const called cpuScore3 which has an initial value of the cpuScore3 button (getElementById)
+
+
 Add the event listener to userRock. On click do the following: 
     Assign the value of userDecision to 'rock'
 
@@ -100,7 +110,29 @@ function: winner
 
     Accepts two paramaters, userWins and cpuWins
 
-    
+
+    if userWins is equal to one
+        -> userScore1 background color is set to red
+
+    elseif userWins is equal to two
+        -> userScore2 background color is set to red
+
+    elseif userWins is equal to three
+        -> userScore3 background color is set to red
+        -> message that the user has won
+
+    if cpuWins is equal to one
+        -> cpuScore1 background color is set to red
+
+    elseif userWins is equal to two
+        -> cpuScore2 background color is set to red
+
+    elseif userWins is equal to three
+        -> cpuScore3 background color is set to red
+        -> Message that the cpu has won 
+
+
+Include a playAgain/reset button and function?
 
 function random(low = 0, high) {
       return low + Math.round(Math.random() * (high - low));
