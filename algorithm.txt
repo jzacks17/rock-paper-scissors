@@ -1,4 +1,39 @@
 
+create a variable of type const called userRock which has an initial value of the userRock button (getElementById)
+
+create a variable of type const called userPaper which has an initial value of the userPaper button (getElementById)
+
+create a variable of type const called userScissors which has an initial value of the userScissors button (getElementById)
+
+create a variable of type let called userWins with an initial value of zero. Used to store the number of rounds the user has won. 
+
+create a variable of type let called cpuWins with an initial value of zero. Used to store the number of rounds the cpu has won. 
+
+create a variable of type let called userDecision. Do not assign an initial value. 
+
+create a variable of type let called cpuDecision. Do not assign an initial value. 
+
+Add the event listener to userRock. On click do the following: 
+    Assign the value of userDecision to 'rock'
+
+    Call the getComputerChoice() function. Assign the output to cpuDecision.
+
+    Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments.
+
+Add the event listener to userPaper. On click do the following: 
+    Assign the value of userDecision to 'paper'
+
+    Call the getComputerChoice() function. Assign the output to cpuDecision.
+
+    Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
+
+Add the event listener to userScissors. On click do the following: 
+    Assign the value of userDecision to 'scissors'
+
+    Call the getComputerChoice() function. Assign the output to cpuDecision.
+
+    Call the function playRound. Pass the userDecision and cpuDecision into the function as argument.
+
 
 
 
@@ -26,11 +61,13 @@ else if userSelection is rock and cpuSelection is scissors
 | or userSelection is paper and cpuSelection is rock 
 | or userSelection is scissors and cpuSelection is paper: 
    -> return that the user won the round 
+   -> Increment userWins by 1
 
 else if userSelection is rock and cpuSelection is paper
 | or userSelection is paper and cpuSelection is scissors
 | or else if userSelection is scissors and cpuSelection is rock
     -> return that the user won the round 
+    -> Increment cpuWins by 1
 
 
 function random(low = 0, high) {
