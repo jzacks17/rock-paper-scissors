@@ -1,9 +1,9 @@
 
-create a variable of type const called userRock which has an initial value of the userRock button (getElementById)
+create a variable of type const called userRock which has an initial value of the chooseRock button (getElementById)
 
-create a variable of type const called userPaper which has an initial value of the userPaper button (getElementById)
+create a variable of type const called userPaper which has an initial value of the choosePaper button (getElementById)
 
-create a variable of type const called userScissors which has an initial value of the userScissors button (getElementById)
+create a variable of type const called userScissors which has an initial value of the chooseScissors button (getElementById)
 
 create a variable of type let called userWins with an initial value of zero. Used to store the number of rounds the user has won. 
 

@@ -97,19 +97,48 @@
 
         <script>
 
-            // Function that when called randomly returns rock, paper or scissors
-            function getComputerChoice(){
-                let cpuRand = random(1,3);
+            //create a variable of type const called userRock which has an initial value of the userRock button (getElementById)
+            const userRock = document.getElementById("chooseRock");
 
-                if (cpuRand == 1){
+            //create a variable of type let called userDecision. Do not assign an initial value. Used to store the user's decision.
+            let userDecision;
+
+            //create a variable of type let called cpuDecision. Do not assign an initial value. Used to store the cpu's decision. 
+            let cpuDecision;
+
+            //Add the event listener to userRock 
+            userRock.addEventListener("click", function () {
+
+                //Assign the value of userDecision to 'rock'
+                userDecision = "rock";
+                
+                //Display the rock image in the user section. 
+
+                //Call the getComputerChoice() function. Assign the output to cpuDecision.
+                cpuDecision = getComputerChoice();
+
+            });
+
+
+
+
+            // Function that when called randomly returns rock, paper or scissors
+            function getComputerChoice() {
+                //Create a variable of type let called cpuRand and assign it a random value between 1 to 3 using random()
+                let cpuRand = random(1, 3);
+
+                //If cpuRand is 1, assign the cpu decision as rock and return rock 
+                if (cpuRand == 1) {
                     return 'rock';
                 }
 
-                else if (cpuRand == 2){
+                //If cpuRand is 2, assign the cpu decision as paper and return paper
+                else if (cpuRand == 2) {
                     return 'paper';
                 }
 
-                else if (cpuRand == 3){
+                //If cpuRand is 3, assign the cpu decision as paper 
+                else if (cpuRand == 3) {
                     return 'scissors';
                 }
             }
@@ -118,6 +147,9 @@
             function random(low = 0, high) {
                 return low + Math.round(Math.random() * (high - low));
             }
+
+
+
 
         </script>
 
