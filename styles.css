@@ -92,7 +92,7 @@ h1 {
 
 /* Display holder for the images - essentially take up the empty space the images otherwise would */
 .image p {
-    padding: 200px;
+    padding: 84px;
     /* display: none; */
 }
 

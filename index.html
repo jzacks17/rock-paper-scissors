@@ -40,7 +40,7 @@
 
                 <img class="hidden" id="userPaper" src="images/paper.png" alt="Paper">
 
-                <img class="hidden" id="userScissorcs" src="images/scissors.png" alt="Scissors">
+                <img class="hidden" id="userScissors" src="images/scissors.png" alt="Scissors">
 
 
 
@@ -80,7 +80,7 @@
 
                 <img class="hidden" id="cpuPaper" src="images/paper.png" alt="Paper">
 
-                <img class="hidden" id="cpuScissorcs" src="images/scissors.png" alt="Scissors">
+                <img class="hidden" id="cpuScissors" src="images/scissors.png" alt="Scissors">
 
 
             </div>
@@ -142,15 +142,11 @@
                 //Assign the value of userDecision to 'rock'
                 userDecision = 'rock';
 
-                //Display the rock image in the user section. 
-                document.getElementById("userP").style.display = "none";
-                document.getElementById("userRock").style.display = "block";
-                document.getElementById("userScissors").style.display = "none";
-
                 //Call the getComputerChoice() function. Assign the output to cpuDecision.
                 cpuDecision = getComputerChoice();
 
                 //Call Display function. Passing it the userDecision and cpuDecision as the argument. 
+                display(userDecision, cpuDecision);
 
                 // Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
                 playRound(userDecision, cpuDecision);
@@ -173,6 +169,7 @@
                 cpuDecision = getComputerChoice();
 
                 //Call Display function. Passing it the userDecision and cpuDecision as the argument. 
+                display(userDecision, cpuDecision);
 
                 //Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
                 playRound(userDecision, cpuDecision);
@@ -192,6 +189,7 @@
                 cpuDecision = getComputerChoice();
 
                 //Call Display function. Passing it the userDecision and cpuDecision as the argument. 
+                display(userDecision, cpuDecision);
 
                 //Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
                 playRound(userDecision, cpuDecision);
