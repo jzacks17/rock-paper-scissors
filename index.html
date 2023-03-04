@@ -14,6 +14,16 @@
         <h1>Rock Paper Scissors</h1>
     </div>
 
+    <div class = "play popup">
+
+        <p>Welcome to Rock Paper Scissors.</p>
+
+        <p>First to 3 wins!</p>
+
+        <p>Press play to begin.</p>
+
+        <button id="buttonPlay"> Play </button>
+    </div>
 
     <!-- Game to be played in  -->
     <div class="game">
@@ -312,28 +322,28 @@
             //Turns on/off the lights corresponding to the number of wins, displays a message if the cpu or user has won their 3rd game
             function score(userW, cpuW) {
                 if (userW == 1) {
-                    userScore1.style.backgroundColor = 'red';
+                    userScore1.style.backgroundColor = 'green';
                 }
 
                 else if (userW == 2) {
-                    userScore2.style.backgroundColor = 'red';
+                    userScore2.style.backgroundColor = 'green';
                 }
 
                 else if (userW == 3) {
-                    userScore3.style.backgroundColor = 'red';
+                    userScore3.style.backgroundColor = 'green';
                     console.log(`The user won the series ${userW} - ${cpuW}!`)
                 }
 
                 if (cpuW == 1) {
-                    cpuScore1.style.backgroundColor = 'red';
+                    cpuScore1.style.backgroundColor = 'green';
                 }
 
                 else if (cpuW == 2) {
-                    cpuScore2.style.backgroundColor = 'red';
+                    cpuScore2.style.backgroundColor = 'green';
                 }
 
                 else if (cpuW == 3) {
-                    cpuScore3.style.backgroundColor = 'red';
+                    cpuScore3.style.backgroundColor = 'green';
                     console.log(`The cpu won the series ${cpuW} - ${userW}!`)
                 }
 

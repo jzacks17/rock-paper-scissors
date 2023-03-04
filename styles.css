@@ -1,8 +1,12 @@
 /* Change all box sizing to border box */
+
 * {
     box-sizing: border-box;
 }
 
+html{
+    display: flex;
+}
 
 body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -10,14 +14,20 @@ body {
     /* Add flex box to the entire body */
     display: flex;
     flex-direction: column;
+
+    background-color: lightgrey;
+
+    flex: auto;
 }
 
-h1 {
-    font-size: 36px;
+.header h1 {
+    font-size: 3em;
     font-weight: bold;
 
-    padding-top: 16px;
-    padding-bottom: 16px;
+    color: white;
+
+    padding-top: 1%;
+    padding-bottom: 1%;
 
 }
 
@@ -25,7 +35,7 @@ h1 {
 
 .header {
     flex: auto;
-    background-color: #371f1f;
+    background-color: #020222;
     width: 100%;
 
     display: flex;
@@ -75,13 +85,13 @@ h1 {
     justify-content: space-around;
 
 
-    margin: 32px 100px 32px 100px;
+    margin: 5% 10%;
 
 }
 
 .score button {
 
-    margin: 0px 64px;
+    margin: 0px 100%;
     border-radius: 16px;
     padding: 8px;
     background-color: white;
@@ -120,3 +130,30 @@ h1 {
     height: 48px;
 
 }
+
+
+/* Styling for the popup before and after games */
+.popup{
+    background-color: rgb(200, 200, 200);
+    position: absolute;
+
+    height: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: space-around;
+}
+
+.popup p{
+
+    font-size: 2em;
+
+}
+
