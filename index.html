@@ -27,7 +27,7 @@
 
     <div class="play popup" id="playAgain">
 
-        <p></p>
+        <p id = "winMessage"></p>
 
         <button id="buttonPlay"> Play Again </button>
     </div>
@@ -120,7 +120,7 @@
 
                 // -> Set display of the play popup to none. 
                 document.getElementById("playGame").style.display = "none";
-            
+
             })
 
             //create a variable of type const called chooseRock which has an initial value of the userRock button (getElementById)
@@ -349,7 +349,13 @@
 
                 else if (userW == 3) {
                     userScore3.style.backgroundColor = 'green';
-                    console.log(`The user won the series ${userW} - ${cpuW}!`)
+
+                    //Set a message that the user has won
+                    document.getElementById("winMessage").innerText= `The user won the series ${userW} - ${cpuW}!`;
+
+                    //Display the playAgain popup
+                    document.getElementById("playAgain").style.display = "flex";
+
                 }
 
                 if (cpuW == 1) {
@@ -362,7 +368,13 @@
 
                 else if (cpuW == 3) {
                     cpuScore3.style.backgroundColor = 'green';
-                    console.log(`The cpu won the series ${cpuW} - ${userW}!`)
+
+                    //Set a message that the cpu has won
+                    document.getElementById("winMessage").innerText= `The cpu won the series ${cpuW} - ${userW}!`;
+
+                    //-> Display the playAgain popup
+                    document.getElementById("playAgain").style.display = "flex";
+
                 }
 
             }

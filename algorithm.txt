@@ -132,8 +132,9 @@ function: score
 
     elseif userWins is equal to three
         -> userScore3 background color is set to red
-        -> Display the playAgain popup
         -> Set a message that the user has won
+        -> Display the playAgain popup
+
 
     if cpuWins is equal to one
         -> cpuScore1 background color is set to red
@@ -143,8 +144,8 @@ function: score
 
     elseif userWins is equal to three
         -> cpuScore3 background color is set to red
-        -> Display the playAgain popup
         -> Set a message that the cpu has won
+        -> Display the playAgain popup
 
 
 Include a playAgain/reset button and function?
