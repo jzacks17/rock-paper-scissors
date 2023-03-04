@@ -1,8 +1,6 @@
 create a variable of type const called play which has an initial value of the buttonPlay button(getElementById)
 
-
 create a variable of type const called playAgain which has an initial value of the button buttonPlayAgain (getElementById)
-
 
 create a variable of type const called chooseRock which has an initial value of the chooseRock button (getElementById)
 
@@ -66,6 +64,11 @@ Add the event listener to chooseScissors. On click do the following:
     Call the function score. Pass userWins and cpuWins into the function as arguments
 
 
+Add the event listener to playAgain. On click: 
+-> Set display of the playAgain popup to none. 
+-> Set all the score lights color to white
+-> set userWins to zero
+-> Set cpuWins to zero
 
 
 function: getComputerChoice 
