@@ -1,7 +1,8 @@
 create a variable of type const called play which has an initial value of the buttonPlay button(getElementById)
 
-Add the event listener to play. On click: 
--> Set display of the play popup to none. 
+
+create a variable of type const called playAgain which has an initial value of the button buttonPlayAgain (getElementById)
+
 
 create a variable of type const called chooseRock which has an initial value of the chooseRock button (getElementById)
 
@@ -25,6 +26,10 @@ type const called userScore3 which has an initial value of the userScore3 button
 type const called cpuScore1 which has an initial value of the cpuScore1 button (getElementById)
 type const called cpuScore2 which has an initial value of the cpuScore2 button (getElementById)
 type const called cpuScore3 which has an initial value of the cpuScore3 button (getElementById)
+
+
+Add the event listener to play. On click: 
+-> Set display of the play popup to none. 
 
 
 Add the event listener to chooseRock. On click do the following: 

@@ -27,9 +27,9 @@
 
     <div class="play popup" id="playAgain">
 
-        <p id = "winMessage"></p>
+        <p id="winMessage"></p>
 
-        <button id="buttonPlay"> Play Again </button>
+        <button id="buttonPlayAgain"> Play Again </button>
     </div>
 
     <!-- Game to be played in  -->
@@ -112,16 +112,13 @@
 
         <script>
 
+            //----------------------------------- Variable Declaration section -------------------------------------------
+
             // Create a variable of type const called play which has an initial value of the buttonPlay button(getElementById)
             const play = document.getElementById("buttonPlay");
 
-            // Add the event listener to play. On click: 
-            play.addEventListener("click", function () {
-
-                // -> Set display of the play popup to none. 
-                document.getElementById("playGame").style.display = "none";
-
-            })
+            //create a variable of type const called playAgain which has an initial value of the button buttonPlayAgain (getElementById)
+            const playAgain = document.getElementById("buttonPlayAgain");
 
             //create a variable of type const called chooseRock which has an initial value of the userRock button (getElementById)
             const chooseRock = document.getElementById("chooseRock");
@@ -163,6 +160,16 @@
 
             // type const called cpuScore3 which has an initial value of the cpuScore3 button (getElementById)
             const cpuScore3 = document.getElementById("cpuScore3");
+
+            //--------------------------------------Event listener section --------------------------------------------
+
+            // Add the event listener to play. On click: 
+            play.addEventListener("click", function () {
+
+                // -> Set display of the play popup to none. 
+                document.getElementById("playGame").style.display = "none";
+
+            })
 
             //Add the event listener to chooseRock 
             chooseRock.addEventListener("click", function () {
@@ -228,7 +235,30 @@
             });
 
 
+            //Add the event listener to playAgain. On click: 
+            playAgain.addEventListener("click", function () {
 
+                // -> Set display of the playAgain popup to none. 
+                document.getElementById("playAgain").style.display = "none";
+
+                // -> Set all the score lights color to white
+                userScore1.style.backgroundColor = 'white';
+                userScore2.style.backgroundColor = 'white';
+                userScore3.style.backgroundColor = 'white';
+                cpuScore1.style.backgroundColor = 'white';
+                cpuScore2.style.backgroundColor = 'white';
+                cpuScore3.style.backgroundColor = 'white';
+
+                // -> set userWins to zero
+                userWins = 0;
+
+                // -> Set cpuWins to zero
+                cpuWins = 0;
+
+                //Empty the previous display
+                display("empty", "empty");
+            })
+            //--------------------------------- Function Section ------------------------------------------------
 
             // Function that when called randomly returns rock, paper or scissors
             function getComputerChoice() {
@@ -278,6 +308,13 @@
                     document.getElementById("userScissors").style.display = "block";
                 }
 
+                else{
+                    document.getElementById("userP").style.display = "block";
+                    document.getElementById("userRock").style.display = "none";
+                    document.getElementById("userPaper").style.display = "none";
+                    document.getElementById("userScissors").style.display = "none";
+                }
+
                 //if cpu selection is rock, make the rock image visible
                 if (cpuSelection == 'rock') {
                     document.getElementById("cpuP").style.display = "none";
@@ -300,6 +337,13 @@
                     document.getElementById("cpuRock").style.display = "none";
                     document.getElementById("cpuPaper").style.display = "none";
                     document.getElementById("cpuScissors").style.display = "block";
+                }
+
+                else{
+                    document.getElementById("cpuP").style.display = "block";
+                    document.getElementById("cpuRock").style.display = "none";
+                    document.getElementById("cpuPaper").style.display = "none";
+                    document.getElementById("cpuScissors").style.display = "none";
                 }
 
 
@@ -351,7 +395,7 @@
                     userScore3.style.backgroundColor = 'green';
 
                     //Set a message that the user has won
-                    document.getElementById("winMessage").innerText= `The user won the series ${userW} - ${cpuW}!`;
+                    document.getElementById("winMessage").innerText = `The user won the series ${userW} - ${cpuW}!`;
 
                     //Display the playAgain popup
                     document.getElementById("playAgain").style.display = "flex";
@@ -370,7 +414,7 @@
                     cpuScore3.style.backgroundColor = 'green';
 
                     //Set a message that the cpu has won
-                    document.getElementById("winMessage").innerText= `The cpu won the series ${cpuW} - ${userW}!`;
+                    document.getElementById("winMessage").innerText = `The cpu won the series ${cpuW} - ${userW}!`;
 
                     //-> Display the playAgain popup
                     document.getElementById("playAgain").style.display = "flex";
