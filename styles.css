@@ -103,12 +103,20 @@ h1 {
     height: 200px;
 }
 
+.selection{
+    margin: 16px 0px;
+    display: flex;
+    flex-direction: row;
+}
+.selection button{
+    /* height: 48px;
+    width: 48px; */
+    margin: 0px 16px;
+    
+}
 .selection img {
 
-    width: 64px;
+    
+    height: 48px;
 
-}
-
-.selection button {
-    margin: 0px 16px;
 }
