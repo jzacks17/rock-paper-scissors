@@ -31,6 +31,9 @@ Add the event listener to play. On click:
 
 
 Add the event listener to chooseRock. On click do the following: 
+    Check to see if a popup is open:
+    -> If a popup is open don't allow the round to be played (return;);
+    
     Assign the value of userDecision to 'rock'. 
 
     Call the getComputerChoice() function. Assign the output to cpuDecision.
@@ -42,6 +45,9 @@ Add the event listener to chooseRock. On click do the following:
     Call the function score. Pass userWins and cpuWins into the function as arguments
 
 Add the event listener to choosePaper. On click do the following: 
+    Check to see if a popup is open:
+    -> If a popup is open don't allow the round to be played (return;);
+    
     Assign the value of userDecision to 'paper'
 
     Call the getComputerChoice() function. Assign the output to cpuDecision.
@@ -53,6 +59,9 @@ Add the event listener to choosePaper. On click do the following:
     Call the function score. Pass userWins and cpuWins into the function as arguments
 
 Add the event listener to chooseScissors. On click do the following: 
+    Check to see if a popup is open:
+    -> If a popup is open don't allow the round to be played (return;);
+    
     Assign the value of userDecision to 'scissors'
 
     Call the getComputerChoice() function. Assign the output to cpuDecision.
