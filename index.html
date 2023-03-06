@@ -161,6 +161,15 @@
             // type const called cpuScore3 which has an initial value of the cpuScore3 button (getElementById)
             const cpuScore3 = document.getElementById("cpuScore3");
 
+
+            // create variables for popup windows: 
+            // type let called playPopUp which has an initial value of "open"
+            let playPopUp = "open"
+
+            // type let called playAgainPopUp which has an initial value of "closed"
+            let playAgainPopUp = "closed"
+
+
             //--------------------------------------Event listener section --------------------------------------------
 
             // Add the event listener to play. On click: 
@@ -168,11 +177,21 @@
 
                 // -> Set display of the play popup to none. 
                 document.getElementById("playGame").style.display = "none";
+                
+                //set value of playPopUp to "closed"
+                playPopUp = "closed";
+
+
 
             })
 
             //Add the event listener to chooseRock 
             chooseRock.addEventListener("click", function () {
+
+                //Check to see if a popup is open:
+                if (playPopUp == "open" || playAgainPopUp == "open") {
+                    return;
+                }
 
                 //Assign the value of userDecision to 'rock'
                 userDecision = 'rock';
@@ -241,6 +260,9 @@
                 // -> Set display of the playAgain popup to none. 
                 document.getElementById("playAgain").style.display = "none";
 
+                //Set value of playAgainPopUp to "closed" 
+                playAgainPopUp = "closed";
+
                 // -> Set all the score lights color to white
                 userScore1.style.backgroundColor = 'white';
                 userScore2.style.backgroundColor = 'white';
@@ -308,7 +330,7 @@
                     document.getElementById("userScissors").style.display = "block";
                 }
 
-                else{
+                else {
                     document.getElementById("userP").style.display = "block";
                     document.getElementById("userRock").style.display = "none";
                     document.getElementById("userPaper").style.display = "none";
@@ -339,7 +361,7 @@
                     document.getElementById("cpuScissors").style.display = "block";
                 }
 
-                else{
+                else {
                     document.getElementById("cpuP").style.display = "block";
                     document.getElementById("cpuRock").style.display = "none";
                     document.getElementById("cpuPaper").style.display = "none";
@@ -400,6 +422,9 @@
                     //Display the playAgain popup
                     document.getElementById("playAgain").style.display = "flex";
 
+                    //set value of playAgainPopUp to "open"
+                    playAgainPopUp = "open";
+
                 }
 
                 if (cpuW == 1) {
@@ -418,6 +443,9 @@
 
                     //-> Display the playAgain popup
                     document.getElementById("playAgain").style.display = "flex";
+
+                    //set value of playAgainPopUp to "open"
+                    playAgainPopUp = "open";
 
                 }
 
