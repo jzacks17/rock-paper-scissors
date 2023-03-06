@@ -115,6 +115,7 @@ body {
     display: flex;
     height: 45vh;
     width: auto;
+    border: 0.2em solid black;
     
 }
 /* Hide all the display images */
@@ -124,6 +125,10 @@ body {
     /* height: 200px; */
     height: 45vh;
     width: auto;
+
+    background-color: white;
+
+    border: 0.2em solid black;
 }
 
 .selection{
