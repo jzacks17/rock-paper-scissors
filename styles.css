@@ -101,21 +101,28 @@ body {
 }
 
 /* Display holder for the images - essentially take up the empty space the images otherwise would */
-.image p {
+/* .image p { */
     /* padding: 84px; */
-    padding-top:20vh;
+    /* padding-top:20vh;
     padding-bottom: 20vh;
     padding-left: 15vh;
-    padding-right: 15vh;
+    padding-right: 15vh; */
     /* display: none; */
-}
+/* } */
 
+.placeHolder {
+
+    display: flex;
+    height: 45vh;
+    width: auto;
+    
+}
 /* Hide all the display images */
 .hidden {
     display: none;
 
     /* height: 200px; */
-    height: 43vh;
+    height: 45vh;
     width: auto;
 }
 
