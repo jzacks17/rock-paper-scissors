@@ -214,6 +214,11 @@
             //Add the event listener to choosePaper. On click do the following: 
             choosePaper.addEventListener("click", function () {
 
+                //Check to see if a popup is open:
+                if (playPopUp == "open" || playAgainPopUp == "open") {
+                    return;
+                }
+
                 //Assign the value of userDecision to 'paper'
                 userDecision = 'paper';
 
@@ -235,6 +240,11 @@
 
             // Add the event listener to chooseScissors. On click do the following: 
             chooseScissors.addEventListener("click", function () {
+
+                //Check to see if a popup is open:
+                if (playPopUp == "open" || playAgainPopUp == "open") {
+                    return;
+                }
 
                 //Assign the value of userDecision to 'scissors'
                 userDecision = 'scissors';
