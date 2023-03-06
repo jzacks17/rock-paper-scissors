@@ -102,7 +102,11 @@ body {
 
 /* Display holder for the images - essentially take up the empty space the images otherwise would */
 .image p {
-    padding: 84px;
+    /* padding: 84px; */
+    padding-top:20vh;
+    padding-bottom: 20vh;
+    padding-left: 15vh;
+    padding-right: 15vh;
     /* display: none; */
 }
 
@@ -110,13 +114,16 @@ body {
 .hidden {
     display: none;
 
-    height: 200px;
+    /* height: 200px; */
+    height: 43vh;
+    width: auto;
 }
 
 .selection{
     margin: 16px 0px;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 .selection button{
     /* height: 48px;
