@@ -25,9 +25,14 @@ type const called cpuScore1 which has an initial value of the cpuScore1 button (
 type const called cpuScore2 which has an initial value of the cpuScore2 button (getElementById)
 type const called cpuScore3 which has an initial value of the cpuScore3 button (getElementById)
 
+create variables for popup windows: 
+type let called playPopUp which has an initial value of "open"
+type let called playAgainPopUp which has an initial value of "closed"
+
 
 Add the event listener to play. On click: 
--> Set display of the play popup to none. 
+-> Set display of the play popup to none.
+-> Set playPopUp equal to "closed" 
 
 
 Add the event listener to chooseRock. On click do the following: 
@@ -75,6 +80,7 @@ Add the event listener to chooseScissors. On click do the following:
 
 Add the event listener to playAgain. On click: 
 -> Set display of the playAgain popup to none. 
+-> Set value of playAgainPopUp to "closed" 
 -> Set all the score lights color to white
 -> set userWins to zero
 -> Set cpuWins to zero
@@ -151,6 +157,7 @@ function: score
         -> userScore3 background color is set to red
         -> Set a message that the user has won
         -> Display the playAgain popup
+        -> set value of playAgainPopUp to "open"
 
 
     if cpuWins is equal to one
@@ -163,6 +170,7 @@ function: score
         -> cpuScore3 background color is set to red
         -> Set a message that the cpu has won
         -> Display the playAgain popup
+        -> set value of playAgainPopUp to "open"
 
 
 Include a playAgain/reset button and function?
