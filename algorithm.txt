@@ -2,19 +2,15 @@ create a variable of type const called play which has an initial value of the bu
 
 create a variable of type const called playAgain which has an initial value of the button buttonPlayAgain (getElementById)
 
-create a variable of type const called chooseRock which has an initial value of the chooseRock button (getElementById)
-
-create a variable of type const called choosePaper which has an initial value of the choosePaper button (getElementById)
-
-create a variable of type const called chooseScissors which has an initial value of the chooseScissors button (getElementById)
+create a variable of type const called choosewhich has an initial value of the three choose buttons (querySelectorAll)
 
 create a variable of type let called userWins with an initial value of zero. Used to store the number of rounds the user has won. 
 
 create a variable of type let called cpuWins with an initial value of zero. Used to store the number of rounds the cpu has won. 
 
-create a variable of type let called userDecision. Do not assign an initial value. Used to store the user's decision.
+create a variable of type let called userSelection. Do not assign an initial value. Used to store the user's selection.
 
-create a variable of type let called cpuDecision. Do not assign an initial value. Used to store the cpu's decision. 
+create a variable of type let called cpuSelection. Do not assign an initial value. Used to store the cpu's selection.
 
 Create variables for the score buttons: 
 type const called userScore1 which has an initial value of the userScore1 button (getElementById)
@@ -35,47 +31,9 @@ Add the event listener to play. On click:
 -> Set playPopUp equal to "closed" 
 
 
-Add the event listener to chooseRock. On click do the following: 
-    Check to see if a popup is open:
-    -> If a popup is open don't allow the round to be played (return;);
-    
-    Assign the value of userDecision to 'rock'. 
+Add the event listener to choose. On click do the following: 
+    Call the playRound() function, passing it to the event.
 
-    Call the getComputerChoice() function. Assign the output to cpuDecision.
-
-    Call Display function. Passing it the userDecision and cpuDecision as the argument. 
-
-    Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments.
-
-    Call the function score. Pass userWins and cpuWins into the function as arguments
-
-Add the event listener to choosePaper. On click do the following: 
-    Check to see if a popup is open:
-    -> If a popup is open don't allow the round to be played (return;);
-    
-    Assign the value of userDecision to 'paper'
-
-    Call the getComputerChoice() function. Assign the output to cpuDecision.
-
-    Call Display function. Passing it the userDecision and cpuDecision as the argument. 
-
-    Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
-
-    Call the function score. Pass userWins and cpuWins into the function as arguments
-
-Add the event listener to chooseScissors. On click do the following: 
-    Check to see if a popup is open:
-    -> If a popup is open don't allow the round to be played (return;);
-    
-    Assign the value of userDecision to 'scissors'
-
-    Call the getComputerChoice() function. Assign the output to cpuDecision.
-
-    Call Display function. Passing it the userDecision and cpuDecision as the argument. 
-
-    Call the function playRound. Pass the userDecision and cpuDecision into the function as argument.
-
-    Call the function score. Pass userWins and cpuWins into the function as arguments
 
 
 Add the event listener to playAgain. On click: 
@@ -86,22 +44,20 @@ Add the event listener to playAgain. On click:
 -> Set cpuWins to zero
 
 
-function: getComputerChoice 
-    When called randomly returns rock, paper or Scissors
-
-    Create a variable of type let called cpuRand and assign it a random value between 1 to 3 using the previously written random function 
-
-    If cpuRand is 1, assign the cpu decision as rock and return rock 
-
-    If cpuRand is 2, assign the cpu decision as paper and return paper
-
-    If cpuRand is 3, assign the cpu decision as paper 
-
 
 function: playRound
     When called, determine if the user or cpu won the round
 
-    Accepts two parameters, userSelection and cpuSelection
+    Accepts one parameter, the event
+
+    Check to see if a popup is open:
+    -> If a popup is open don't allow the round to be played (return;);
+    
+    Assign userSelection to the value of the button that was chosen.
+
+    Set cpuSelection equal to the getComputerChoice() function
+
+    call the display() function, passing it userSelection and cpuSelection
 
     If userSelection and cpuSelection are equal
         ->then return that it was a tie
@@ -117,6 +73,22 @@ function: playRound
     | or else if userSelection is scissors and cpuSelection is rock
         -> return that the user won the round 
         -> Increment cpuWins by 1
+
+    Call the function score. Pass userWins and cpuWins into the function as arguments
+
+
+
+function: getComputerChoice 
+    When called randomly returns rock, paper or Scissors
+
+    Create a variable of type let called cpuRand and assign it a random value between 1 to 3 using the previously written random function 
+
+    If cpuRand is 1, assign the cpu decision as rock and return rock 
+
+    If cpuRand is 2, assign the cpu decision as paper and return paper
+
+    If cpuRand is 3, assign the cpu decision as paper 
+
 
 function: Display
     Displays the user and cpu image corresponding to the user's and cpu's decision
