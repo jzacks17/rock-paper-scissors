@@ -2,15 +2,15 @@ create a variable of type const called play which has an initial value of the bu
 
 create a variable of type const called playAgain which has an initial value of the button buttonPlayAgain (getElementById)
 
-create a variable of type const called choosewhich has an initial value of the three choose buttons (querySelectorAll)
+create a variable of type const called choose which has an initial value of the three choose buttons (querySelectorAll)
 
 create a variable of type let called userWins with an initial value of zero. Used to store the number of rounds the user has won. 
 
 create a variable of type let called cpuWins with an initial value of zero. Used to store the number of rounds the cpu has won. 
 
-create a variable of type let called userSelection. Do not assign an initial value. Used to store the user's selection.
+create a variable of type let called userDecision. Do not assign an initial value. Used to store the user's decision.
 
-create a variable of type let called cpuSelection. Do not assign an initial value. Used to store the cpu's selection.
+create a variable of type let called cpuDecision. Do not assign an initial value. Used to store the cpu's decision.
 
 Create variables for the score buttons: 
 type const called userScore1 which has an initial value of the userScore1 button (getElementById)
@@ -31,9 +31,7 @@ Add the event listener to play. On click:
 -> Set playPopUp equal to "closed" 
 
 
-Add the event listener to choose. On click do the following: 
-    Call the playRound() function, passing it to the event.
-
+Add the event listener to choose for each choice. On click call playRound().  
 
 
 Add the event listener to playAgain. On click: 
@@ -46,35 +44,20 @@ Add the event listener to playAgain. On click:
 
 
 function: playRound
-    When called, determine if the user or cpu won the round
-
-    Accepts one parameter, the event
+    When called, plays the round by calling the auxilliary functions. 
 
     Check to see if a popup is open:
     -> If a popup is open don't allow the round to be played (return;);
     
-    Assign userSelection to the value of the button that was chosen.
+    Assign userDecision to the value of the button that was chosen.
 
-    Set cpuSelection equal to the getComputerChoice() function
+    Set cpuDecision equal to the getComputerChoice() function
 
-    call the display() function, passing it userSelection and cpuSelection
+    call the display() function, passing it userDecision and cpuDecision
 
-    If userSelection and cpuSelection are equal
-        ->then return that it was a tie
+    Call the determineWinner() function, passing it userDecision and cpuDecision
 
-    else if userSelection is rock and cpuSelection is scissors 
-    | or userSelection is paper and cpuSelection is rock 
-    | or userSelection is scissors and cpuSelection is paper: 
-    -> return that the user won the round 
-    -> Increment userWins by 1
-
-    else if userSelection is rock and cpuSelection is paper
-    | or userSelection is paper and cpuSelection is scissors
-    | or else if userSelection is scissors and cpuSelection is rock
-        -> return that the user won the round 
-        -> Increment cpuWins by 1
-
-    Call the function score. Pass userWins and cpuWins into the function as arguments
+    Call the function score(). Pass userWins and cpuWins into the function as arguments
 
 
 
@@ -112,6 +95,27 @@ function: Display
     
     else 
         -> Display scissors image
+
+
+function determineWinner
+    Function that determines the winner of each round that is played 
+    Accepts two parameters userSelection and cpuSelection
+
+     If userSelection and cpuSelection are equal
+        ->then return that it was a tie
+
+    else if userSelection is rock and cpuSelection is scissors 
+    | or userSelection is paper and cpuSelection is rock 
+    | or userSelection is scissors and cpuSelection is paper: 
+    -> return that the user won the round 
+    -> Increment userWins by 1
+
+    else if userSelection is rock and cpuSelection is paper
+    | or userSelection is paper and cpuSelection is scissors
+    | or else if userSelection is scissors and cpuSelection is rock
+        -> return that the user won the round 
+        -> Increment cpuWins by 1
+
 
 function: score
     Turns on/off the lights corresponding to the number of wins, displays a message if the cpu or user has won their 3rd game
