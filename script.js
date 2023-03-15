@@ -6,14 +6,8 @@ const play = document.getElementById("buttonPlay");
 //create a variable of type const called playAgain which has an initial value of the button buttonPlayAgain (getElementById)
 const playAgain = document.getElementById("buttonPlayAgain");
 
-//create a variable of type const called chooseRock which has an initial value of the userRock button (getElementById)
-const chooseRock = document.getElementById("chooseRock");
-
-//create a variable of type const called choosePaper which has an initial value of the choosePaper button (getElementById)
-const choosePaper = document.getElementById("choosePaper");
-
-// create a variable of type const called chooseScissors which has an initial value of the chooseScissors button (getElementById)
-const chooseScissors = document.getElementById("chooseScissors");
+// create a variable of type const called choose which has an initial value of the three choose buttons (querySelectorAll)
+const choose = document.querySelectorAll('.choose');
 
 // create a variable of type let called userWins with an initial value of zero. Used to store the number of rounds the user has won. 
 let userWins = 0;
@@ -25,7 +19,7 @@ let cpuWins = 0;
 //create a variable of type let called userDecision. Do not assign an initial value. Used to store the user's decision.
 let userDecision;
 
-//create a variable of type let called cpuDecision. Do not assign an initial value. Used to store the cpu's decision. 
+// create a variable of type let called cpuDecision. Do not assign an initial value. Used to store the cpu's decision.
 let cpuDecision;
 
 // Create variables for the score buttons: 
@@ -70,84 +64,8 @@ play.addEventListener("click", function () {
 
 
 })
-
-//Add the event listener to chooseRock 
-chooseRock.addEventListener("click", function () {
-
-    //Check to see if a popup is open:
-    if (playPopUp == "open" || playAgainPopUp == "open") {
-        return;
-    }
-
-    //Assign the value of userDecision to 'rock'
-    userDecision = 'rock';
-
-    //Call the getComputerChoice() function. Assign the output to cpuDecision.
-    cpuDecision = getComputerChoice();
-
-    //Call Display function. Passing it the userDecision and cpuDecision as the argument. 
-    display(userDecision, cpuDecision);
-
-    // Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
-    playRound(userDecision, cpuDecision);
-
-    //Call the function score. Pass userWins and cpuWins into the function as arguments
-    score(userWins, cpuWins);
-
-
-});
-
-//Add the event listener to choosePaper. On click do the following: 
-choosePaper.addEventListener("click", function () {
-
-    //Check to see if a popup is open:
-    if (playPopUp == "open" || playAgainPopUp == "open") {
-        return;
-    }
-
-    //Assign the value of userDecision to 'paper'
-    userDecision = 'paper';
-
-    //Display the paper image in the user section. 
-
-    //Call the getComputerChoice() function. Assign the output to cpuDecision.
-    cpuDecision = getComputerChoice();
-
-    //Call Display function. Passing it the userDecision and cpuDecision as the argument. 
-    display(userDecision, cpuDecision);
-
-    //Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
-    playRound(userDecision, cpuDecision);
-
-    //Call the function score. Pass userWins and cpuWins into the function as arguments
-    score(userWins, cpuWins);
-
-});
-
-// Add the event listener to chooseScissors. On click do the following: 
-chooseScissors.addEventListener("click", function () {
-
-    //Check to see if a popup is open:
-    if (playPopUp == "open" || playAgainPopUp == "open") {
-        return;
-    }
-
-    //Assign the value of userDecision to 'scissors'
-    userDecision = 'scissors';
-
-    //Call the getComputerChoice() function. Assign the output to cpuDecision.
-    cpuDecision = getComputerChoice();
-
-    //Call Display function. Passing it the userDecision and cpuDecision as the argument. 
-    display(userDecision, cpuDecision);
-
-    //Call the function playRound. Pass the userDecision and cpuDecision into the function as arguments
-    playRound(userDecision, cpuDecision);
-
-    //Call the function score. Pass userWins and cpuWins into the function as arguments
-    score(userWins, cpuWins);
-
-});
+// Add the event listener to choose for each choice. On click call playRound() passing it e. 
+choose.forEach(choice => choice.addEventListener('click', playRound));
 
 
 //Add the event listener to playAgain - the playAgain Button. 
@@ -178,6 +96,30 @@ playAgain.addEventListener("click", function () {
     display("empty", "empty");
 })
 //--------------------------------- Function Section ------------------------------------------------
+
+//Function that when called plays the round
+function playRound() {
+
+    //Check to see if a popup is open:
+    if (playPopUp == "open" || playAgainPopUp == "open") {
+        return;
+    }
+
+    userDecision = this.id;
+
+    //Call the getComputerChoice() function. Assign the output to cpuSelection.
+    cpuDecision = getComputerChoice();
+
+    //Call Display function. Passing it the userDecision and cpuDecision as the argument. 
+    display(userDecision, cpuDecision);
+
+    //Call the determineWinner() function, passing it the userDecision and cpuDecision
+    determineWinner(userDecision, cpuDecision);
+
+    //Call the function score. Pass userWins and cpuWins into the function as arguments
+    score(userWins, cpuWins);
+
+}
 
 // Function that when called randomly returns rock, paper or scissors
 function getComputerChoice() {
@@ -268,35 +210,29 @@ function display(userSelection, cpuSelection) {
 
 }
 
-//Function that when called determines if the user or cpu won the round
-function playRound(userSelection, cpuSelection) {
-
+//Function that determines the winner of each round that is played 
+function determineWinner(userSelection, cpuSelection){
+    
     //If there is a tie
     if (userSelection == cpuSelection) {
-        //console.log('tie');
-        return;
+        return;    
     }
 
     //If user wins
     else if ((userSelection == 'rock' && cpuSelection == 'scissors')
         || (userSelection == 'paper' && cpuSelection == 'rock')
         || (userSelection == 'scissors' && cpuSelection == 'paper')) {
-        //console.log('The user won');
         userWins += 1;
         return;
-
     }
 
     //If cpu wins
     else if ((userSelection == 'rock' && cpuSelection == 'paper')
         || (userSelection == 'paper' && cpuSelection == 'scissors')
         || (userSelection == 'scissors' && cpuSelection == 'rock')) {
-        //console.log('The cpu won');
         cpuWins += 1;
         return;
-
     }
-
 }
 
 
