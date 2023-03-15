@@ -132,19 +132,22 @@ function: score
     elseif userWins is equal to three
         -> userScore3 background color is set to red
         -> Set a message that the user has won
+        -> play win-sound.mp3 audio
         -> Display the playAgain popup
         -> set value of playAgainPopUp to "open"
+        
 
 
     if cpuWins is equal to one
         -> cpuScore1 background color is set to red
 
-    elseif userWins is equal to two
+    elseif cpuWins is equal to two
         -> cpuScore2 background color is set to red
 
-    elseif userWins is equal to three
+    elseif cpuWins is equal to three
         -> cpuScore3 background color is set to red
         -> Set a message that the cpu has won
+        -> play lose-sound.mp3 audio
         -> Display the playAgain popup
         -> set value of playAgainPopUp to "open"
 

@@ -253,6 +253,11 @@ function score(userW, cpuW) {
         //Set a message that the user has won
         document.getElementById("winMessage").innerText = `Congratulations! You won the series ${userW} - ${cpuW}!`;
 
+        
+        //play win-sound.mp3 audio
+        //document.querySelector('#win').play();
+        new Audio('audio/win-sound.mp3').play()
+
         //Display the playAgain popup
         document.getElementById("playAgain").style.display = "flex";
 
@@ -274,6 +279,10 @@ function score(userW, cpuW) {
 
         //Set a message that the cpu has won
         document.getElementById("winMessage").innerText = `The computer won the series ${cpuW} - ${userW}!`;
+
+        //play lose-sound.mp3 audio
+        //document.querySelector('#lose').play();
+        new Audio('audio/lose-sound.mp3').play()
 
         //-> Display the playAgain popup
         document.getElementById("playAgain").style.display = "flex";

@@ -16,3 +16,11 @@ https://pixabay.com/vectors/sheet-paper-print-white-lined-297179/
 scissors.png:
 https://pixabay.com/vectors/avatar-avatars-scissors-2029577/
 
+
+Audio Credit:
+
+win-sound.mp3
+https://pixabay.com/sound-effects/success-fanfare-trumpets-6185/
+
+lose-sound.mp3
+https://pixabay.com/sound-effects/wah-wah-sad-trombone-6347/
