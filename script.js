@@ -64,7 +64,8 @@ play.addEventListener("click", function () {
 
 
 })
-// Add the event listener to choose for each choice. On click call playRound() passing it e. 
+
+// Add the event listener to choose for each choice. On click call playRound().
 choose.forEach(choice => choice.addEventListener('click', playRound));
 
 
